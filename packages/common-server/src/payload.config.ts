@@ -6,6 +6,8 @@ import Tags from "./collections/Tags";
 import Users from "./collections/Users";
 import Media from "./collections/Media";
 import seo from "@payloadcms/plugin-seo";
+import { cloudStorage } from "@payloadcms/plugin-cloud-storage";
+import s3Adapter from "./adapters/S3";
 
 export default buildConfig({
   serverURL: "http://localhost:3000",
@@ -25,6 +27,13 @@ export default buildConfig({
       uploadsCollection: "media",
       generateTitle: ({ doc }) => `${doc.title.value} - MadeByCommon.com`,
       generateDescription: ({ doc }) => doc.excerpt,
+    }),
+    cloudStorage({
+      collections: {
+        media: {
+          adapter: s3Adapter, // see docs for the adapter you want to use
+        },
+      },
     }),
   ],
 });
