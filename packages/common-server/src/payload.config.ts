@@ -1,25 +1,30 @@
-import { buildConfig } from 'payload/config';
-import path from 'path';
-import Categories from './collections/Categories';
-import Posts from './collections/Posts';
-import Tags from './collections/Tags';
-import Users from './collections/Users';
+import { buildConfig } from "payload/config";
+import path from "path";
+import Categories from "./collections/Categories";
+import Posts from "./collections/Posts";
+import Tags from "./collections/Tags";
+import Users from "./collections/Users";
+import Media from "./collections/Media";
+import seo from "@payloadcms/plugin-seo";
 
 export default buildConfig({
-  serverURL: 'http://localhost:3000',
+  serverURL: "http://localhost:3000",
   admin: {
     user: Users.slug,
   },
-  collections: [
-    Categories,
-    Posts,
-    Tags,
-    Users,
-  ],
+  collections: [Categories, Posts, Tags, Users, Media],
   typescript: {
-    outputFile: path.resolve(__dirname, 'payload-types.ts')
+    outputFile: path.resolve(__dirname, "payload-types.ts"),
   },
   graphQL: {
-    schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
+    schemaOutputFile: path.resolve(__dirname, "generated-schema.graphql"),
   },
+  plugins: [
+    seo({
+      collections: ["posts"],
+      uploadsCollection: "media",
+      generateTitle: ({ doc }) => `${doc.title.value} - MadeByCommon.com`,
+      generateDescription: ({ doc }) => doc.excerpt,
+    }),
+  ],
 });
