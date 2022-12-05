@@ -6,8 +6,8 @@ import { HomeCTAProps } from "./HomeCTA.d";
 
 const HomeCTA: React.FC<HomeCTAProps> = () => {
   return (
-    <section>
-      <div>
+    <section className={styles.homeCTA}>
+      <div className={styles.homeCTAInner}>
         <h3>Let's Do Business</h3>
         <p>
           At Common, innovating is the primary focus. Let's start a strategic

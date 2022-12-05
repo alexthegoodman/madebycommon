@@ -1,1 +1,8 @@
-/** Styles **/
+@import "../../app/variables.scss";
+
+.footer {
+  .footerInner {
+    width: $desktop;
+    margin: 0 auto;
+  }
+}

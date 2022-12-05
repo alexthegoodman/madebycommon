@@ -1,1 +1,30 @@
-/** Styles **/
+@import "../../app/variables.scss";
+
+.homeGrid {
+  .homeGridInner {
+    width: $desktop;
+    margin: 0 auto;
+    display: flex;
+
+    .left,
+    .right {
+      width: 50%;
+      display: flex;
+
+      .gridItem {
+        position: relative;
+
+        span,
+        p {
+          color: $black;
+        }
+
+        .icon {
+          position: absolute;
+          bottom: 25px;
+          right: 25px;
+        }
+      }
+    }
+  }
+}

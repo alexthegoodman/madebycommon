@@ -6,13 +6,13 @@ import { PageFooterProps } from "./PageFooter.d";
 
 const PageFooter: React.FC<PageFooterProps> = () => {
   return (
-    <footer>
-      <div>
-        <div>
-          <span>Common</span>
-          <span>Common © 2023</span>
+    <footer className={styles.footer}>
+      <div className={styles.footerInner}>
+        <div className={styles.left}>
+          <h5 className={styles.brand}>Common</h5>
+          <span className={styles.copyright}>Common © 2023</span>
         </div>
-        <div>
+        <div className={styles.right}>
           <ul>
             <li>
               <a>Try StreamDoc</a>
