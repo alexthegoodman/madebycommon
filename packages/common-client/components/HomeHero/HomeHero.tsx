@@ -7,13 +7,18 @@ import Image from "next/image";
 
 const HomeHero: React.FC<HomeHeroProps> = () => {
   return (
-    <section>
-      <div>
-        <div>
+    <section className={styles.homeHero}>
+      <div className={styles.homeHeroInner}>
+        <div className={styles.left}>
           <h2>Creating products that inspire</h2>
         </div>
-        <div>
-          <Image src="" alt="Blush Illustration" />
+        <div className={styles.right}>
+          <Image
+            src="/svg/undraw1.svg"
+            width={550}
+            height={600}
+            alt="Blush Illustration"
+          />
         </div>
       </div>
     </section>

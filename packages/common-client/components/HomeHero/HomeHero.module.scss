@@ -1,1 +1,25 @@
-/** Styles **/
+@import "../../app/variables.scss";
+
+.homeHero {
+  .homeHeroInner {
+    width: $desktop;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h2 {
+        font-size: 96px;
+        line-height: 124px;
+      }
+    }
+    .right {
+      img {
+      }
+    }
+  }
+}
