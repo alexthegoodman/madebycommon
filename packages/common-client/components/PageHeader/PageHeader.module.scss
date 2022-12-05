@@ -1,1 +1,52 @@
-/** Styles **/
+@import "../../app/variables.scss";
+
+.header {
+  .innerHeader {
+    width: $desktop;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+
+    .left {
+      display: flex;
+
+      .brandContainer {
+        .brand {
+          font-weight: 400;
+          font-size: 48px;
+        }
+      }
+      .nav {
+        .navList {
+          display: flex;
+          list-style: none;
+
+          li {
+            margin-right: 32px;
+
+            a {
+              font-weight: 300;
+              font-size: 32px;
+            }
+          }
+        }
+      }
+    }
+    .right {
+      .socialList {
+        display: flex;
+        list-style: none;
+
+        li {
+          margin-right: 16px;
+
+          a {
+            img {
+            }
+          }
+        }
+      }
+    }
+  }
+}

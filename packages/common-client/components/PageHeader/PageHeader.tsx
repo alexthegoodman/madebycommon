@@ -4,40 +4,48 @@ import styles from "./PageHeader.module.scss";
 
 import { PageHeaderProps } from "./PageHeader.d";
 
+import { Noto_Sans } from "@next/font/google";
+
+const notoSans = Noto_Sans({ weight: ["100", "300", "400"] });
+
 const PageHeader: React.FC<PageHeaderProps> = () => {
   return (
-    <header>
-      <div>
-        <div>
-          <div>
-            <h1>Common</h1>
+    <header className={styles.header}>
+      <div className={styles.innerHeader}>
+        <div className={styles.left}>
+          <div className={styles.brandContainer}>
+            <h1 className={styles.brand}>Common</h1>
           </div>
-          <div>
-            <ul>
+          <nav className={styles.nav}>
+            <ul className={styles.navList}>
               <li>
-                <a>Try StreamDoc</a>
+                <a href="" className={notoSans.className}>
+                  Try StreamDoc <img src="/svg/link.svg" />
+                </a>
               </li>
               <li>
-                <a>Blog</a>
+                <a href="" className={notoSans.className}>
+                  Blog
+                </a>
               </li>
             </ul>
-          </div>
+          </nav>
         </div>
-        <div>
-          <ul>
+        <div className={styles.right}>
+          <ul className={styles.socialList}>
             <li>
-              <a>
-                <img />
+              <a href="" target="_blank">
+                <img src="/svg/facebook.svg" />
               </a>
             </li>
             <li>
-              <a>
-                <img />
+              <a href="" target="_blank">
+                <img src="/svg/twitter.svg" />
               </a>
             </li>
             <li>
-              <a>
-                <img />
+              <a href="" target="_blank">
+                <img src="/svg/linkedin.svg" />
               </a>
             </li>
           </ul>

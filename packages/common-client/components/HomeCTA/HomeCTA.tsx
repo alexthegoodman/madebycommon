@@ -10,7 +10,7 @@ const HomeCTA: React.FC<HomeCTAProps> = () => {
       <div>
         <h3>Let's Do Business</h3>
         <p>
-          At Common, innovating is the primary focus. Let’s start a strategic
+          At Common, innovating is the primary focus. Let's start a strategic
           partnership which positions us both for growth.
         </p>
         <a href="mailto:alex@madebycommon.com">Reach Out</a>
