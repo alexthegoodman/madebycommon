@@ -8,12 +8,14 @@ const HomeCTA: React.FC<HomeCTAProps> = () => {
   return (
     <section className={styles.homeCTA}>
       <div className={styles.homeCTAInner}>
-        <h3>Let's Do Business</h3>
+        <h3 className={styles.headline1}>Let's Do Business</h3>
         <p>
           At Common, innovating is the primary focus. Let's start a strategic
           partnership which positions us both for growth.
         </p>
-        <a href="mailto:alex@madebycommon.com">Reach Out</a>
+        <a href="mailto:alex@madebycommon.com" className={styles.btn}>
+          Reach Out
+        </a>
       </div>
     </section>
   );

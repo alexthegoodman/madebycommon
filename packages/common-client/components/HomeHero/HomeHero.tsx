@@ -10,7 +10,7 @@ const HomeHero: React.FC<HomeHeroProps> = () => {
     <section className={styles.homeHero}>
       <div className={styles.homeHeroInner}>
         <div className={styles.left}>
-          <h2>Creating products that inspire</h2>
+          <h2 className={styles.headline1}>Creating products that inspire</h2>
         </div>
         <div className={styles.right}>
           <Image

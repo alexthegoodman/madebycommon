@@ -1,8 +1,25 @@
 @import "../../app/variables.scss";
+@import "../../app/shared.scss";
 
 .homeCTA {
   .homeCTAInner {
-    width: $desktop;
+    padding: 110px 0;
+    width: $mid;
     margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+      margin-bottom: 15px;
+    }
+    p {
+      display: block;
+      font-size: 28px;
+      line-height: 38px;
+      color: $black;
+      margin-bottom: 45px;
+    }
   }
 }

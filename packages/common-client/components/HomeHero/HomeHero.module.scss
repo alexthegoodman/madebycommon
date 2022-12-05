@@ -1,4 +1,5 @@
 @import "../../app/variables.scss";
+@import "../../app/shared.scss";
 
 .homeHero {
   .homeHeroInner {
@@ -11,12 +12,6 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-
-      h2 {
-        font-size: 76px;
-        line-height: 112px;
-        color: $black;
-      }
     }
     .right {
       img {

@@ -1,0 +1,27 @@
+.btn {
+  display: block;
+  text-decoration: none;
+  color: white;
+  background-color: $black;
+  width: 350px;
+  height: 95px;
+  font-size: 32px;
+  line-height: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.headline1 {
+  font-size: 76px;
+  line-height: 112px;
+  color: $black;
+}
+
+.divider {
+  display: block;
+  height: 2px;
+  width: 200px;
+  background-color: $lightGrey;
+  margin: 0 auto;
+}
