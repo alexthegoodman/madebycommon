@@ -13,7 +13,11 @@ const HomeCTA: React.FC<HomeCTAProps> = () => {
           At Common, innovating is the primary focus. Let's start a strategic
           partnership which positions us both for growth.
         </p>
-        <a href="mailto:alex@madebycommon.com" className={styles.btn}>
+        <a
+          href="mailto:alex@madebycommon.com"
+          target="_blank"
+          className={styles.btn}
+        >
           Reach Out
         </a>
       </div>

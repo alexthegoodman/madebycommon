@@ -1,8 +1,32 @@
 @import "../../app/variables.scss";
 
 .footer {
+  border-top: 2px $lightGrey solid;
+
   .footerInner {
     width: $desktop;
     margin: 0 auto;
+    padding: 70px 0;
+    display: flex;
+    justify-content: space-between;
+
+    .left {
+      h5,
+      span {
+        display: block;
+      }
+    }
+    .right {
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          a {
+          }
+        }
+      }
+    }
   }
 }

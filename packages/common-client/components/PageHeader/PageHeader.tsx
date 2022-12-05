@@ -20,7 +20,7 @@ const PageHeader: React.FC<PageHeaderProps> = () => {
             <ul className={styles.navList}>
               <li>
                 <a href="" className={notoSans.className}>
-                  Try StreamDoc <img src="/svg/bigLink.svg" width="30" />
+                  Try StreamDoc <img src="/svg/bigLink.svg" />
                 </a>
               </li>
               <li>
