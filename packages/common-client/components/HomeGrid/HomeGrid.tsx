@@ -16,7 +16,7 @@ const HomeGrid: React.FC<HomeGridProps> = () => {
             className={styles.gridItem}
           >
             <div className={styles.itemContent}>
-              <span>StreamDoc</span>
+              <span>CommonText</span>
               <p>Google-Compliant Writing Assistant</p>
             </div>
             <div className={styles.icon}>

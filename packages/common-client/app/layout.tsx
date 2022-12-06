@@ -4,7 +4,7 @@ import { Lato } from "@next/font/google";
 import PageHeader from "../components/PageHeader/PageHeader";
 import PageFooter from "../components/PageFooter/PageFooter";
 
-const lato = Lato({ weight: ["100", "300", "400"] });
+const lato = Lato({ subsets: ["latin"], weight: ["100", "300", "400"] });
 
 export default function RootLayout({
   children,

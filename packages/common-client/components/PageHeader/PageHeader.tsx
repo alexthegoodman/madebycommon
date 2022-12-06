@@ -6,7 +6,10 @@ import { PageHeaderProps } from "./PageHeader.d";
 
 import { Noto_Sans } from "@next/font/google";
 
-const notoSans = Noto_Sans({ weight: ["100", "300", "400"] });
+const notoSans = Noto_Sans({
+  subsets: ["latin"],
+  weight: ["100", "300", "400"],
+});
 
 const PageHeader: React.FC<PageHeaderProps> = () => {
   return (
@@ -20,7 +23,7 @@ const PageHeader: React.FC<PageHeaderProps> = () => {
             <ul className={styles.navList}>
               <li>
                 <a href="" className={notoSans.className}>
-                  Try StreamDoc <img src="/svg/bigLink.svg" />
+                  Try CommonText <img src="/svg/bigLink.svg" />
                 </a>
               </li>
               <li>

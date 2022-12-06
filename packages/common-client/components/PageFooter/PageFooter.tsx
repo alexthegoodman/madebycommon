@@ -15,7 +15,7 @@ const PageFooter: React.FC<PageFooterProps> = () => {
         <div className={styles.right}>
           <ul>
             <li>
-              <a>Try StreamDoc</a>
+              <a>Try StreamDox</a>
             </li>
             <li>
               <a>Blog</a>
