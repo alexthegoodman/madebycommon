@@ -54,7 +54,7 @@ const Posts: CollectionConfig = {
       },
     },
     {
-      name: "content",
+      name: "bodyContent",
       type: "richText",
     },
     {
