@@ -16,6 +16,7 @@ const getPosts = () => {
           docs {
             title
             content
+            slug
             meta {
               title
               description

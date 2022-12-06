@@ -18,7 +18,9 @@ const PageHeader: React.FC<PageHeaderProps> = () => {
       <div className={styles.innerHeader}>
         <div className={styles.left}>
           <div className={styles.brandContainer}>
-            <h1 className={styles.brand}>Common</h1>
+            <h1 className={styles.brand}>
+              <Link href="/">Common</Link>
+            </h1>
           </div>
           <nav className={styles.nav}>
             <ul className={styles.navList}>
