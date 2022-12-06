@@ -10,7 +10,12 @@ export default function Home() {
       <HomeHero />
       <HomeGrid />
       <div className={styles.divider}></div>
-      <HomeCTA />
+      <HomeCTA
+        headline="Let's Do Business"
+        description="At Common, innovating is the primary focus. Let's start a strategic
+          partnership which positions us both for growth."
+        link="mailto:alex@madebycommon.com"
+      />
     </main>
   );
 }

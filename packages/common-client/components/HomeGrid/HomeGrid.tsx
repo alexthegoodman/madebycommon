@@ -4,8 +4,37 @@ import styles from "./HomeGrid.module.scss";
 
 import { HomeGridProps } from "./HomeGrid.d";
 import Link from "next/link";
+import request, { gql } from "graphql-request";
 
-const HomeGrid: React.FC<HomeGridProps> = () => {
+const getPosts = () => {
+  const data = request(
+    "http://localhost:3000/api/graphql",
+    gql`
+      query postsQuery {
+        Posts(limit: 2) {
+          page
+          docs {
+            title
+            content
+            meta {
+              title
+              description
+              image {
+                filename
+                url
+              }
+            }
+          }
+        }
+      }
+    `
+  );
+  return data;
+};
+
+const HomeGrid = async () => {
+  const posts = await getPosts();
+  console.info("posts", posts, posts.Posts.docs);
   return (
     <section className={styles.homeGrid}>
       <div className={styles.homeGridInner}>
@@ -25,18 +54,16 @@ const HomeGrid: React.FC<HomeGridProps> = () => {
           </a>
         </div>
         <div className={styles.right}>
-          <Link href="/blog" className={styles.gridItem}>
-            <span>10 Ways to be Active in Poetry</span>
-            <div className={styles.icon}>
-              <img src="/svg/arrowRight.svg" />
-            </div>
-          </Link>
-          <Link href="/blog" className={styles.gridItem}>
-            <span>Promoting Your Book with Libraries</span>
-            <div className={styles.icon}>
-              <img src="/svg/arrowRight.svg" />
-            </div>
-          </Link>
+          {posts.Posts.docs.map((doc, i) => {
+            return (
+              <Link href={`/blog/${doc.slug}`} className={styles.gridItem}>
+                <span>{doc.title}</span>
+                <div className={styles.icon}>
+                  <img src="/svg/arrowRight.svg" />
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>

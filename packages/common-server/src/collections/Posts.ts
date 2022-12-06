@@ -15,9 +15,11 @@ const Posts: CollectionConfig = {
       type: "text",
     },
     {
-      name: "featuredImage",
-      type: "relationship",
-      relationTo: "media",
+      name: "slug",
+      type: "text",
+      admin: {
+        position: "sidebar",
+      },
     },
     {
       name: "author",

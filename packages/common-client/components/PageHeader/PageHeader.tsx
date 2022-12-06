@@ -5,6 +5,7 @@ import styles from "./PageHeader.module.scss";
 import { PageHeaderProps } from "./PageHeader.d";
 
 import { Noto_Sans } from "@next/font/google";
+import Link from "next/link";
 
 const notoSans = Noto_Sans({
   subsets: ["latin"],
@@ -27,9 +28,9 @@ const PageHeader: React.FC<PageHeaderProps> = () => {
                 </a>
               </li>
               <li>
-                <a href="" className={notoSans.className}>
+                <Link href="/blog" className={notoSans.className}>
                   Blog
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
