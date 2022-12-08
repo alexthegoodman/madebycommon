@@ -10,7 +10,7 @@ import { cloudStorage } from "@payloadcms/plugin-cloud-storage";
 import s3Adapter from "./adapters/S3";
 
 export default buildConfig({
-  serverURL: "http://localhost:3000",
+  serverURL: "http://0.0.0.0:3000",
   admin: {
     user: Users.slug,
   },
@@ -21,6 +21,7 @@ export default buildConfig({
   graphQL: {
     schemaOutputFile: path.resolve(__dirname, "generated-schema.graphql"),
   },
+  cors: ["http://192.168.0.151:3000"],
   plugins: [
     seo({
       collections: ["posts"],
