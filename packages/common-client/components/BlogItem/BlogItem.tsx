@@ -4,10 +4,11 @@ import styles from "./BlogItem.module.scss";
 
 import { BlogItemProps } from "./BlogItem.d";
 import Image from "next/image";
+import Link from "next/link";
 
-const BlogItem: React.FC<BlogItemProps> = () => {
+const BlogItem: React.FC<BlogItemProps> = ({ post = null }) => {
   return (
-    <div className={styles.blogItem}>
+    <Link href={`/blog/post/${post.slug}`} className={styles.blogItem}>
       <div className={styles.blogItemInner}>
         <div className={styles.left}>
           <Image src="" alt={""} width="550" height="320" />
@@ -19,7 +20,7 @@ const BlogItem: React.FC<BlogItemProps> = () => {
           <p></p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
