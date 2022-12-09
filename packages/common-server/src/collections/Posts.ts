@@ -14,6 +14,11 @@ const Posts: CollectionConfig = {
       name: "title",
       type: "text",
     },
+    // {
+    //   name: "featuredImage",
+    //   type: "relationship",
+    //   relationTo: "media",
+    // },
     {
       name: "slug",
       type: "text",

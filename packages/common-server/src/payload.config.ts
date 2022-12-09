@@ -29,12 +29,12 @@ export default buildConfig({
       generateTitle: ({ doc }) => `${doc.title.value} - MadeByCommon.com`,
       generateDescription: ({ doc }) => doc.excerpt,
     }),
-    cloudStorage({
-      collections: {
-        media: {
-          adapter: s3Adapter, // see docs for the adapter you want to use
-        },
-      },
-    }),
+    // cloudStorage({
+    //   collections: {
+    //     media: {
+    //       adapter: s3Adapter, // see docs for the adapter you want to use
+    //     },
+    //   },
+    // }),
   ],
 });
