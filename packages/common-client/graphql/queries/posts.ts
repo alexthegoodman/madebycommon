@@ -5,12 +5,19 @@ const PostFieldsFragment = gql`
     title
     content
     slug
+    createdAt
+    updatedAt
+
     meta {
       title
       description
       image {
-        filename
-        url
+        sizes {
+          thumbnail {
+            url
+            filename
+          }
+        }
       }
     }
   }

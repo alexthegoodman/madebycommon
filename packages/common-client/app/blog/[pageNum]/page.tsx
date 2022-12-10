@@ -28,7 +28,9 @@ const Blog = async ({ params }) => {
       />
       <section className={styles.blogList}>
         <div className={styles.blogListInner}>
-          <BlogItem />
+          {posts.Posts.docs.map((post, i) => {
+            return <BlogItem post={post} />;
+          })}
         </div>
         <Paginator />
       </section>

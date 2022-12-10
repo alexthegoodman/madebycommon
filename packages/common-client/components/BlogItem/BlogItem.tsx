@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const BlogItem: React.FC<BlogItemProps> = ({ post = null }) => {
   return (
-    <Link href={`/blog/post/${post.slug}`} className={styles.blogItem}>
+    <Link href={`/blog/post/${post?.slug}`} className={styles.blogItem}>
       <div className={styles.blogItemInner}>
         <div className={styles.left}>
           <Image src="" alt={""} width="550" height="320" />
