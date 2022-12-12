@@ -34,13 +34,13 @@ const Posts: CollectionConfig = {
         position: "sidebar",
       },
     },
-    {
-      name: "publishedDate",
-      type: "date",
-      admin: {
-        position: "sidebar",
-      },
-    },
+    // {
+    //   name: "publishedDate",
+    //   type: "date",
+    //   admin: {
+    //     position: "sidebar",
+    //   },
+    // },
     {
       name: "category",
       type: "relationship",

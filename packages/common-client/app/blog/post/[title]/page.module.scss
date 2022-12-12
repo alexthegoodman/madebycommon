@@ -1,0 +1,41 @@
+@import "../../../variables.scss";
+
+.articleHeader {
+  .articleHeaderInner {
+    width: $desktop;
+    margin: 0 auto;
+    display: flex;
+
+    .left {
+      img {
+      }
+    }
+    .right {
+      padding: 0 35px;
+
+      .datePublished {
+      }
+      h1 {
+        font-size: 68px;
+        line-height: 78px;
+        font-weight: 400;
+        display: block;
+        margin: 5px 0;
+      }
+      span,
+      p {
+        font-size: 20px;
+        line-height: 30px;
+      }
+      .author {
+      }
+      p {
+      }
+    }
+  }
+}
+
+.content {
+  width: $desktop;
+  margin: 0 auto;
+}

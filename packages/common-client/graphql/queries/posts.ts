@@ -5,8 +5,13 @@ const PostFieldsFragment = gql`
     title
     content
     slug
+
     createdAt
     updatedAt
+
+    author {
+      name
+    }
 
     meta {
       title

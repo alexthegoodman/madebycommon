@@ -1,7 +1,10 @@
 import request from "graphql-request";
 import Image from "next/image";
+import TryTextArticle from "../../../../components/TryTextArticle/TryTextArticle";
+import TryTextSidebar from "../../../../components/TryTextSidebar/TryTextSidebar";
 import { getPostQuery } from "../../../../graphql/queries/posts";
 import { serialize } from "../../../../helpers/serialize";
+import styles from "./page.module.scss";
 
 const getPost = (slug) => {
   //   const data = fetch(
@@ -22,30 +25,51 @@ const BlogPost = async ({ params }) => {
 
   return (
     <main>
-      <section>
-        <div>
+      <section className={styles.articleHeader}>
+        <div className={styles.articleHeaderInner}>
           {post.meta.image ? (
-            <div>
+            <div className={styles.left}>
               <Image
                 src={post.meta.image.sizes.thumbnail.url}
                 alt={post.title}
-                width="800"
-                height="450"
+                width="500"
+                height="300"
               />
             </div>
           ) : (
             <></>
           )}
 
-          <div>
-            <span>Published on </span>
+          <div className={styles.right}>
+            {post.createdAt === post.updatedAt ? (
+              <span className={styles.datePublished}>
+                Published on {post.createdAt}
+              </span>
+            ) : (
+              <span className={styles.datePublished}>
+                Last Updated on {post.updatedAt}
+              </span>
+            )}
+
             <h1>{post.title}</h1>
-            <span>Written by</span>
-            <p>...</p>
+            <span className={styles.author}>
+              <em>Written by {post.author?.name}</em>
+            </span>
+            <p>{post.meta.description}</p>
           </div>
         </div>
       </section>
-      <article>{serialize(post.content)}</article>
+      <section className={styles.content}>
+        <div className={styles.contentInner}>
+          <aside className={styles.sidebar}>
+            <TryTextSidebar />
+          </aside>
+          <article className={styles.articleBody}>
+            {serialize(post.content)}
+            <TryTextArticle />
+          </article>
+        </div>
+      </section>
     </main>
   );
 };
