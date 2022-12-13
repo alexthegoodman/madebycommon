@@ -13,9 +13,12 @@
 
       .brandContainer {
         .brand {
-          font-weight: 400;
-          font-size: 48px;
-          color: $black;
+          a {
+            font-weight: 400;
+            font-size: 48px;
+            color: $black;
+            text-decoration: none;
+          }
         }
       }
       .nav {
@@ -31,8 +34,10 @@
 
           li {
             margin-right: 40px;
+            position: relative;
 
-            a {
+            a,
+            span {
               font-weight: 300;
               font-size: 24px;
               line-height: 64px;
@@ -44,6 +49,39 @@
                 bottom: -3px;
                 display: inline-block;
                 width: 25px;
+              }
+            }
+
+            a {
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+
+            .subList {
+              position: absolute;
+              box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+              padding: 0;
+              list-style: none;
+              z-index: 10;
+              width: 200px;
+
+              li {
+                margin: 0;
+
+                a {
+                  display: block;
+                  padding: 5px 20px;
+                  font-size: 18px;
+                  line-height: 32px;
+                }
+              }
+
+              &.openList {
+                display: block;
+              }
+              &.closedList {
+                display: none;
               }
             }
           }

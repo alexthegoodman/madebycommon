@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 
 import styles from "./PageHeader.module.scss";
@@ -13,6 +15,8 @@ const notoSans = Noto_Sans({
 });
 
 const PageHeader: React.FC<PageHeaderProps> = () => {
+  const [showMenu1, setShowMenu1] = React.useState(false);
+
   return (
     <header className={styles.header}>
       <div className={styles.innerHeader}>
@@ -29,6 +33,39 @@ const PageHeader: React.FC<PageHeaderProps> = () => {
                   Try CommonText <img src="/svg/bigLink.svg" />
                 </a>
               </li>
+              <li
+                onMouseEnter={() => setShowMenu1(true)}
+                onMouseLeave={() => setShowMenu1(false)}
+              >
+                <span className={notoSans.className}>About</span>
+                <ul
+                  className={`${styles.subList} ${
+                    showMenu1 ? styles.openList : styles.closedList
+                  }`}
+                >
+                  <li>
+                    <Link href="/blog" className={notoSans.className}>
+                      Vision
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/blog" className={notoSans.className}>
+                      Team
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/blog" className={notoSans.className}>
+                      Press
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/blog" className={notoSans.className}>
+                      Poverty
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+
               <li>
                 <Link href="/blog" className={notoSans.className}>
                   Blog
