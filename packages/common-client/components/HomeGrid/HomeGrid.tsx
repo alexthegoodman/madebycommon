@@ -5,6 +5,8 @@ import styles from "./HomeGrid.module.scss";
 import { HomeGridProps } from "./HomeGrid.d";
 import Link from "next/link";
 import request, { gql } from "graphql-request";
+import Image from "next/image";
+import Icon from "../Icon/Icon";
 
 const getPosts = () => {
   const data = request(
@@ -21,8 +23,11 @@ const getPosts = () => {
               title
               description
               image {
-                filename
-                url
+                sizes {
+                  thumbnail {
+                    url
+                  }
+                }
               }
             }
           }
@@ -35,7 +40,9 @@ const getPosts = () => {
 
 const HomeGrid = async () => {
   const posts = await getPosts();
-  console.info("posts", posts, posts.Posts.docs);
+
+  console.info("posts", posts.Posts.docs);
+
   return (
     <section className={styles.homeGrid}>
       <div className={styles.homeGridInner}>
@@ -45,22 +52,39 @@ const HomeGrid = async () => {
             target="_blank"
             className={styles.gridItem}
           >
+            <Image
+              className={styles.backImage}
+              src="/images/tempCommonText2.jpg"
+              alt="CommonText app"
+              width={700}
+              height={400}
+            />
             <div className={styles.itemContent}>
               <span>CommonText</span>
-              <p>Google-Compliant Writing Assistant</p>
+              <p>Get Relevant Information As You Type</p>
             </div>
             <div className={styles.icon}>
-              <img src="/svg/bigLink.svg" />
+              {/* <img src="/svg/bigLink.svg" /> */}
+              <Icon name="ArrowSquareOut" />
             </div>
           </a>
         </div>
         <div className={styles.right}>
           {posts.Posts.docs.map((doc, i) => {
             return (
-              <Link href={`/blog/${doc.slug}`} className={styles.gridItem}>
-                <span>{doc.title}</span>
+              <Link
+                href={`/blog/post/${doc.slug}`}
+                className={styles.gridItem}
+                style={{
+                  backgroundImage: `url("${doc.meta.image?.sizes?.thumbnail?.url}")`,
+                }}
+              >
+                <div className={styles.itemContent}>
+                  <span>{doc.title}</span>
+                </div>
                 <div className={styles.icon}>
-                  <img src="/svg/arrowRight.svg" />
+                  {/* <img src="/svg/arrowRight.svg" /> */}
+                  <Icon name="ArrowCircleRight" />
                 </div>
               </Link>
             );
