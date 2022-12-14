@@ -16,6 +16,18 @@ const Media: CollectionConfig = {
         height: 300,
         position: "centre",
       },
+      {
+        name: "wideThumbnail",
+        width: 400,
+        height: 250,
+        position: "centre",
+      },
+      {
+        name: "tallThumbnail",
+        width: 220,
+        height: 300,
+        position: "centre",
+      },
     ],
     adminThumbnail: "thumbnail",
     mimeTypes: ["image/*"],

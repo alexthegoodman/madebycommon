@@ -22,6 +22,14 @@ const PostFieldsFragment = gql`
             url
             filename
           }
+          wideThumbnail {
+            url
+            filename
+          }
+          tallThumbnail {
+            url
+            filename
+          }
         }
       }
     }
@@ -31,6 +39,18 @@ const PostFieldsFragment = gql`
 export const getPostsQuery = gql`
   query postsQuery($page: Int) {
     Posts(page: $page, limit: 3) {
+      page
+      docs {
+        ...PostFieldsFragment
+      }
+    }
+  }
+  ${PostFieldsFragment}
+`;
+
+export const getPostsPreviewQuery = gql`
+  query postsQuery {
+    Posts(limit: 2) {
       page
       docs {
         ...PostFieldsFragment

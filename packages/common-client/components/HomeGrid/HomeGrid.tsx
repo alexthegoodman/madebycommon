@@ -7,33 +7,12 @@ import Link from "next/link";
 import request, { gql } from "graphql-request";
 import Image from "next/image";
 import Icon from "../Icon/Icon";
+import { getPostsPreviewQuery } from "../../graphql/queries/posts";
 
 const getPosts = () => {
   const data = request(
     "http://localhost:3000/api/graphql",
-    gql`
-      query postsQuery {
-        Posts(limit: 2) {
-          page
-          docs {
-            title
-            content
-            slug
-            meta {
-              title
-              description
-              image {
-                sizes {
-                  thumbnail {
-                    url
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    `
+    getPostsPreviewQuery
   );
   return data;
 };
@@ -76,7 +55,7 @@ const HomeGrid = async () => {
                 href={`/blog/post/${doc.slug}`}
                 className={styles.gridItem}
                 style={{
-                  backgroundImage: `url("${doc.meta.image?.sizes?.thumbnail?.url}")`,
+                  backgroundImage: `url("${doc.meta.image?.sizes?.tallThumbnail?.url}")`,
                 }}
               >
                 <div className={styles.itemContent}>
