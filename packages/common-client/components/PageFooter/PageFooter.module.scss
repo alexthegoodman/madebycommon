@@ -11,6 +11,11 @@
     justify-content: space-between;
 
     .left {
+      h5 {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
       h5,
       span {
         display: block;
@@ -21,9 +26,20 @@
         list-style: none;
         padding: 0;
         margin: 0;
+        display: flex;
 
         li {
+          margin-right: 15px;
+
+          &:last-of-type {
+            margin-right: 0;
+          }
+
           a {
+            font-weight: 300;
+            font-size: 18px;
+            color: $black;
+            text-decoration: none;
           }
         }
       }

@@ -3,6 +3,7 @@ import * as React from "react";
 import styles from "./PageFooter.module.scss";
 
 import { PageFooterProps } from "./PageFooter.d";
+import Link from "next/link";
 
 const PageFooter: React.FC<PageFooterProps> = () => {
   return (
@@ -15,10 +16,12 @@ const PageFooter: React.FC<PageFooterProps> = () => {
         <div className={styles.right}>
           <ul>
             <li>
-              <a>Try StreamDox</a>
+              <a href="https://commontext.app" target="_blank">
+                Try CommonText
+              </a>
             </li>
             <li>
-              <a>Blog</a>
+              <Link href="/blog">Blog</Link>
             </li>
           </ul>
         </div>

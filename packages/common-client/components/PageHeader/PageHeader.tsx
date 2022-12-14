@@ -33,7 +33,8 @@ const PageHeader: React.FC<PageHeaderProps> = () => {
                   Try CommonText <img src="/svg/bigLink.svg" />
                 </a>
               </li>
-              <li
+
+              {/* <li
                 onMouseEnter={() => setShowMenu1(true)}
                 onMouseLeave={() => setShowMenu1(false)}
               >
@@ -64,7 +65,7 @@ const PageHeader: React.FC<PageHeaderProps> = () => {
                     </Link>
                   </li>
                 </ul>
-              </li>
+              </li> */}
 
               <li>
                 <Link href="/blog" className={notoSans.className}>
