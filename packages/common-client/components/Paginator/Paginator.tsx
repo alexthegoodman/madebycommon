@@ -11,8 +11,8 @@ const Paginator: React.FC<PaginatorProps> = ({ params }) => {
   const pageNum = params.pageNum ? parseInt(params.pageNum) : 1;
 
   return (
-    <section>
-      <div>
+    <section className={styles.paginator}>
+      <div className={styles.paginatorInner}>
         {pageNum - 1 > 0 ? (
           <Link href={`/blog/${pageNum - 1}`}>
             <span>{pageNum - 1}</span>
@@ -20,7 +20,7 @@ const Paginator: React.FC<PaginatorProps> = ({ params }) => {
         ) : (
           <></>
         )}
-        <Link href={`/blog/${pageNum}`}>
+        <Link className={styles.currentPage} href={`/blog/${pageNum}`}>
           <span>{pageNum}</span>
         </Link>
         <Link href={`/blog/${pageNum + 1}`}>
