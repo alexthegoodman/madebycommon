@@ -1,6 +1,6 @@
 @import "../../app/variables.scss";
 
-$innerPadding: 35px;
+$innerPadding: 30px;
 
 .homeGrid {
   margin-bottom: 110px;
@@ -51,7 +51,7 @@ $innerPadding: 35px;
 
         .itemContent {
           position: absolute;
-
+          padding-right: 25px;
           z-index: 5;
         }
 

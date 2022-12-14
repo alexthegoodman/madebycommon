@@ -6,7 +6,7 @@ import { getPostQuery } from "../../../../graphql/queries/posts";
 import { serialize } from "../../../../helpers/serialize";
 import styles from "./page.module.scss";
 
-const getPost = (slug) => {
+export const getPost = (slug) => {
   //   const data = fetch(
   //     `http://0.0.0.0:3000/api/posts?where[slug][equals]=${slug}`
   //   );
