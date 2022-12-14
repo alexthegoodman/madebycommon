@@ -1,1 +1,3 @@
-export interface PaginatorProps {}
+export interface PaginatorProps {
+  params: any;
+}

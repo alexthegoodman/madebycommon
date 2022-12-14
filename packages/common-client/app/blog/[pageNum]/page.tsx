@@ -32,7 +32,7 @@ const Blog = async ({ params }) => {
             return <BlogItem post={post} />;
           })}
         </div>
-        <Paginator />
+        <Paginator params={params} />
       </section>
     </main>
   );

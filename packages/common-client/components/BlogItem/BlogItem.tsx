@@ -11,12 +11,16 @@ const BlogItem: React.FC<BlogItemProps> = ({ post = null }) => {
     <Link href={`/blog/post/${post?.slug}`} className={styles.blogItem}>
       <div className={styles.blogItemInner}>
         <div className={styles.left}>
-          <Image
-            src={post.meta?.image?.sizes?.wideThumbnail?.url}
-            alt={post.title}
-            width="550"
-            height="320"
-          />
+          {post.meta?.image?.sizes?.wideThumbnail?.url ? (
+            <Image
+              src={post.meta?.image?.sizes?.wideThumbnail?.url}
+              alt={post.title}
+              width="550"
+              height="320"
+            />
+          ) : (
+            <></>
+          )}
         </div>
         <div className={styles.right}>
           <span>Published on {post.createdAt}</span>

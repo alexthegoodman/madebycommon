@@ -11,7 +11,7 @@ const getPosts = () => {
   return data;
 };
 
-const Blog = async () => {
+const Blog = async ({ params }) => {
   const posts = await getPosts();
 
   console.info("posts", posts);
@@ -28,7 +28,7 @@ const Blog = async () => {
             return <BlogItem post={post} />;
           })}
         </div>
-        <Paginator />
+        <Paginator params={params} />
       </section>
     </main>
   );
