@@ -4,24 +4,10 @@ import styles from "./HomeGrid.module.scss";
 
 import { HomeGridProps } from "./HomeGrid.d";
 import Link from "next/link";
-import request, { gql } from "graphql-request";
 import Image from "next/image";
 import Icon from "../Icon/Icon";
-import { getPostsPreviewQuery } from "../../graphql/queries/posts";
 
-const getPosts = () => {
-  const data = request(
-    "http://localhost:3000/api/graphql",
-    getPostsPreviewQuery
-  );
-  return data;
-};
-
-const HomeGrid = async () => {
-  const posts = await getPosts();
-
-  console.info("posts", posts.Posts.docs);
-
+const HomeGrid = ({ posts }: HomeGridProps) => {
   return (
     <section className={styles.homeGrid}>
       <div className={styles.homeGridInner}>
@@ -52,6 +38,7 @@ const HomeGrid = async () => {
           {posts.Posts.docs.map((doc, i) => {
             return (
               <Link
+                key={`homeGrid${i}`}
                 href={`/blog/post/${doc.slug}`}
                 className={styles.gridItem}
                 style={{

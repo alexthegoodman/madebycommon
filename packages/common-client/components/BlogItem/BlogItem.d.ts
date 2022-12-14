@@ -1,1 +1,3 @@
-export interface BlogItemProps {}
+export interface BlogItemProps {
+  post: any;
+}

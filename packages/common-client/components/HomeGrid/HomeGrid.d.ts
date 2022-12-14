@@ -1,1 +1,3 @@
-export interface HomeGridProps {}
+export interface HomeGridProps {
+  posts: any;
+}

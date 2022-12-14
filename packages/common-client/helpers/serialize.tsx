@@ -8,19 +8,19 @@ export const serialize = (children: any) =>
       //   let text = (
       //     <span dangerouslySetInnerHTML={{ __html: escapeHTML(node.text) }} />
       //   );
-      let text = node.text;
+      let text: any = node.text;
 
-      if (node.bold) {
-        text = <strong key={i}>{text}</strong>;
-      }
+      // if (node.bold) {
+      //   text = <strong key={i}>{text}</strong>;
+      // }
 
-      if (node.code) {
-        text = <code key={i}>{text}</code>;
-      }
+      // if (node.code) {
+      //   text = <code key={i}>{text}</code>;
+      // }
 
-      if (node.italic) {
-        text = <em key={i}>{text}</em>;
-      }
+      // if (node.italic) {
+      //   text = <em key={i}>{text}</em>;
+      // }
 
       // Handle other leaf types here...
 

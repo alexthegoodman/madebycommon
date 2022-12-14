@@ -1,14 +1,29 @@
+import request from "graphql-request";
 import Image from "next/image";
 import HomeCTA from "../components/HomeCTA/HomeCTA";
 import HomeGrid from "../components/HomeGrid/HomeGrid";
 import HomeHero from "../components/HomeHero/HomeHero";
+import { getPostsPreviewQuery } from "../graphql/queries/posts";
 import styles from "./page.module.scss";
 
-export default function Home() {
+const getPosts = () => {
+  const data = request(
+    "http://localhost:3000/api/graphql",
+    getPostsPreviewQuery
+  );
+
+  return data;
+};
+
+const Home = async () => {
+  const posts = await getPosts();
+
+  console.info("posts", posts.Posts.docs);
+
   return (
     <main>
       <HomeHero />
-      <HomeGrid />
+      <HomeGrid posts={posts} />
       <div className={styles.divider}></div>
       <HomeCTA
         headline="Let's Do Business"
@@ -18,4 +33,6 @@ export default function Home() {
       />
     </main>
   );
-}
+};
+
+export default Home;
