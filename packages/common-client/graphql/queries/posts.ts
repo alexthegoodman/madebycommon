@@ -21,14 +21,26 @@ const PostFieldsFragment = gql`
           thumbnail {
             url
             filename
+            height
+            width
           }
           wideThumbnail {
             url
             filename
+            height
+            width
           }
           tallThumbnail {
             url
             filename
+            height
+            width
+          }
+          largeThumbnail {
+            url
+            filename
+            height
+            width
           }
         }
       }

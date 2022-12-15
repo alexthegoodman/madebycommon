@@ -21,19 +21,19 @@ const BlogPost = async ({ params }) => {
   //   const postJson = await postData.json();
   const post = postData.Posts.docs[0];
 
-  console.info("post", post);
+  // console.info("post", post);
 
   return (
     <main>
       <section className={styles.articleHeader}>
         <div className={styles.articleHeaderInner}>
-          {post.meta.image ? (
+          {post.meta?.image?.sizes?.largeThumbnail?.url ? (
             <div className={styles.left}>
               <Image
-                src={post.meta.image.sizes.thumbnail.url}
+                src={post.meta?.image?.sizes?.largeThumbnail?.url}
                 alt={post.title}
-                width="500"
-                height="300"
+                width={post.meta?.image?.sizes?.largeThumbnail?.width / 2}
+                height={post.meta?.image?.sizes?.largeThumbnail?.height / 2}
               />
             </div>
           ) : (
