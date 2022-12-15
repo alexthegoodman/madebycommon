@@ -1,1 +1,30 @@
-/** Styles **/
+@import "../../app/variables.scss";
+@import "../../app/shared.scss";
+
+section.tryTextArticle {
+  background-color: #f3f3f3;
+  margin-top: 25px;
+
+  div.tryTextArticleInner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+
+    h5.headline,
+    p.copy {
+      display: block;
+      margin: 0;
+    }
+    h5.headline {
+      font-size: 28px;
+    }
+    p.copy {
+      width: 30%;
+    }
+    .btn {
+      font-size: 20px;
+      width: 30%;
+    }
+  }
+}
