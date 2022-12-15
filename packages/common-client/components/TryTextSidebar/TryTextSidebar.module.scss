@@ -1,1 +1,31 @@
-/** Styles **/
+@import "../../app/variables.scss";
+@import "../../app/shared.scss";
+
+.tryTextSidebar {
+  .tryTextSidebarInner {
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 15px;
+    }
+    h5,
+    p {
+      display: block;
+      text-align: center;
+      font-weight: 400;
+    }
+    h5 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 20px;
+    }
+    .btn {
+      font-size: 24px;
+    }
+  }
+}
