@@ -23,6 +23,14 @@
   @include desktopDown {
     .homeHeroInner {
       width: 100%;
+      flex-direction: column;
+
+      .right {
+        img {
+          display: block;
+          max-width: 100%;
+        }
+      }
     }
   }
 }

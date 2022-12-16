@@ -8,6 +8,7 @@ import { PageHeaderProps } from "./PageHeader.d";
 
 import { Noto_Sans } from "@next/font/google";
 import Link from "next/link";
+import { List } from "phosphor-react";
 
 const notoSans = Noto_Sans({
   subsets: ["latin"],
@@ -93,6 +94,20 @@ const PageHeader: React.FC<PageHeaderProps> = () => {
               </a>
             </li>
           </ul>
+        </div>
+      </div>
+      <div className={styles.mobileHeader}>
+        <div className={styles.mobileHeaderInner}>
+          <div className={styles.brandContainer}>
+            <h1 className={styles.brand}>
+              <Link href="/">Common</Link>
+            </h1>
+          </div>
+          <div className={styles.buttonContainer}>
+            <a href="#!">
+              <List weight="thin" />
+            </a>
+          </div>
         </div>
       </div>
     </header>

@@ -106,9 +106,20 @@
     }
   }
 
+  .mobileHeader {
+    display: none;
+
+    width: 100%;
+  }
+
   @include desktopDown {
     .innerHeader {
+      display: none;
+
       width: 100%;
+    }
+    .mobileHeader {
+      display: flex;
     }
   }
 }
