@@ -17,15 +17,25 @@ const notoSans = Noto_Sans({
 
 const PageHeader: React.FC<PageHeaderProps> = () => {
   const [showMenu1, setShowMenu1] = React.useState(false);
+  const [showMobile, setShowMobile] = React.useState(false);
 
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${
+        showMobile ? styles.showMobile : styles.hideMobile
+      }`}
+    >
+      <div className={styles.mobileButtonContainer}>
+        <a href="#!" onClick={() => setShowMobile(!showMobile)}>
+          <List weight="thin" />
+        </a>
+      </div>
       <div className={styles.innerHeader}>
         <div className={styles.left}>
           <div className={styles.brandContainer}>
-            <h1 className={styles.brand}>
+            <div className={styles.brand}>
               <Link href="/">Common</Link>
-            </h1>
+            </div>
           </div>
           <nav className={styles.nav}>
             <ul className={styles.navList}>
@@ -104,7 +114,7 @@ const PageHeader: React.FC<PageHeaderProps> = () => {
             </h1>
           </div>
           <div className={styles.buttonContainer}>
-            <a href="#!">
+            <a href="#!" onClick={() => setShowMobile(!showMobile)}>
               <List weight="thin" />
             </a>
           </div>
