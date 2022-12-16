@@ -1,4 +1,5 @@
 @import "../../app/variables.scss";
+@import "../../app/mixins.scss";
 
 .footer {
   border-top: 2px $lightGrey solid;
@@ -43,6 +44,12 @@
           }
         }
       }
+    }
+  }
+
+  @include desktopDown {
+    .footerInner {
+      width: 100%;
     }
   }
 }

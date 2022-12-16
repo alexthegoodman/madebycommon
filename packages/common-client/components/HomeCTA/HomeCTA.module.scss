@@ -1,5 +1,6 @@
 @import "../../app/variables.scss";
 @import "../../app/shared.scss";
+@import "../../app/mixins.scss";
 
 .homeCTA {
   .homeCTAInner {
@@ -22,6 +23,12 @@
       color: $black;
       margin-bottom: 45px;
       letter-spacing: 0.3px;
+    }
+  }
+
+  @include desktopDown {
+    .homeCTAInner {
+      width: 100%;
     }
   }
 }

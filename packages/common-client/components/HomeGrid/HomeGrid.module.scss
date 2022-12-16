@@ -1,4 +1,5 @@
 @import "../../app/variables.scss";
+@import "../../app/mixins.scss";
 
 $innerPadding: 30px;
 
@@ -136,6 +137,12 @@ $innerPadding: 30px;
           line-height: 36px;
         }
       }
+    }
+  }
+
+  @include desktopDown {
+    .homeGridInner {
+      width: 100%;
     }
   }
 }

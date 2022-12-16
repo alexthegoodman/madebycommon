@@ -1,5 +1,6 @@
 @import "../../app/variables.scss";
 @import "../../app/shared.scss";
+@import "../../app/mixins.scss";
 
 .homeHero {
   .homeHeroInner {
@@ -16,6 +17,12 @@
     .right {
       img {
       }
+    }
+  }
+
+  @include desktopDown {
+    .homeHeroInner {
+      width: 100%;
     }
   }
 }

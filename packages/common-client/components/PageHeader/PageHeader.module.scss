@@ -1,4 +1,5 @@
 @import "../../app/variables.scss";
+@import "../../app/mixins.scss";
 
 .header {
   .innerHeader {
@@ -102,6 +103,12 @@
           }
         }
       }
+    }
+  }
+
+  @include desktopDown {
+    .innerHeader {
+      width: 100%;
     }
   }
 }

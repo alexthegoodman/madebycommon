@@ -1,0 +1,19 @@
+@import "./variables.scss";
+
+@mixin desktopDown {
+  @media (max-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin midDown {
+  @media (max-width: $mid) {
+    @content;
+  }
+}
+
+@mixin smallDown {
+  @media (max-width: $small) {
+    @content;
+  }
+}
