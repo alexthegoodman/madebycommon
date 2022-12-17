@@ -24,11 +24,14 @@
     .homeHeroInner {
       width: 100%;
       flex-direction: column;
+      padding: 25px $gutter 50px $gutter;
 
       .right {
         img {
           display: block;
           max-width: 100%;
+          height: auto;
+          margin-top: 50px;
         }
       }
     }

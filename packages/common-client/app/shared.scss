@@ -1,3 +1,5 @@
+@import "./mixins.scss";
+
 .btn {
   display: block;
   text-decoration: none;
@@ -19,6 +21,11 @@
   font-size: 76px;
   line-height: 112px;
   color: $black;
+
+  @include desktopDown {
+    font-size: 38px;
+    line-height: 54px;
+  }
 }
 
 .divider {

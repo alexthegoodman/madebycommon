@@ -8,7 +8,7 @@ import { PageHeaderProps } from "./PageHeader.d";
 
 import { Noto_Sans } from "@next/font/google";
 import Link from "next/link";
-import { List } from "phosphor-react";
+import { List, ArrowSquareOut } from "phosphor-react";
 
 const notoSans = Noto_Sans({
   subsets: ["latin"],
@@ -41,7 +41,7 @@ const PageHeader: React.FC<PageHeaderProps> = () => {
             <ul className={styles.navList}>
               <li>
                 <a href="" className={notoSans.className}>
-                  Try CommonText <img src="/svg/bigLink.svg" />
+                  Try CommonText <ArrowSquareOut weight="thin" />
                 </a>
               </li>
 
