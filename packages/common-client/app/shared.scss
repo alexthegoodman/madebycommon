@@ -15,6 +15,11 @@
   justify-content: center;
   text-align: center;
   font-weight: 400;
+
+  @include desktopDown {
+    font-size: 24px;
+    line-height: 28px;
+  }
 }
 
 .headline1 {
@@ -31,7 +36,7 @@
 .divider {
   display: block;
   height: 2px;
-  width: 200px;
+  width: 125px;
   background-color: $lightGrey;
   margin: 0 auto;
 }

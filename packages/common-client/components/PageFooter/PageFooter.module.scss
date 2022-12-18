@@ -50,6 +50,19 @@
   @include desktopDown {
     .footerInner {
       width: 100%;
+      flex-direction: column;
+      justify-content: center;
+
+      .left,
+      .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .left {
+        margin-bottom: 25px;
+      }
     }
   }
 }

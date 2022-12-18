@@ -29,6 +29,14 @@
   @include desktopDown {
     .homeCTAInner {
       width: 100%;
+      padding: 60px $gutter 110px $gutter;
+
+      h3 {
+      }
+      p {
+        font-size: 22px;
+        line-height: 32px;
+      }
     }
   }
 }

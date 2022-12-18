@@ -108,6 +108,7 @@ $innerPadding: 30px;
         }
         p {
           font-size: 22px;
+          line-height: 28px;
         }
       }
     }
@@ -118,6 +119,9 @@ $innerPadding: 30px;
         height: 300px;
         width: calc(50% - 10px);
         margin-right: 20px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
 
         &:nth-of-type(2) {
           margin-top: 100px;
@@ -141,9 +145,12 @@ $innerPadding: 30px;
   }
 
   @include desktopDown {
+    margin-bottom: 60px;
+
     .homeGridInner {
       width: 100%;
       flex-direction: column;
+      padding: 0 $gutter;
 
       .left,
       .right {
@@ -151,11 +158,21 @@ $innerPadding: 30px;
 
         .gridItem {
           width: 100%;
-          margin: 0;
+          margin: 0 0 $gutter 0;
+          height: auto;
+          padding: 0;
 
           .backImage {
+            position: relative;
             max-width: 100%;
             height: auto;
+          }
+        }
+      }
+      .left {
+        .gridItem {
+          .itemContent {
+            padding: 0 75px 0 25px;
           }
         }
       }
@@ -163,6 +180,8 @@ $innerPadding: 30px;
         flex-direction: column;
 
         .gridItem {
+          aspect-ratio: 3/2;
+
           &:nth-of-type(2) {
             margin-top: 0;
           }
