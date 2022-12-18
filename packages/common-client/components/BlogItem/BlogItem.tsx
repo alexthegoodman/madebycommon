@@ -5,8 +5,14 @@ import styles from "./BlogItem.module.scss";
 import { BlogItemProps } from "./BlogItem.d";
 import Image from "next/image";
 import Link from "next/link";
+import { DateTime } from "luxon";
 
 const BlogItem: React.FC<BlogItemProps> = ({ post = null }) => {
+  const publishedOn = React.useMemo(
+    () => DateTime.fromISO(post.createdAt).toFormat("LLL dd, yyyy"),
+    [post.createdAt]
+  );
+
   return (
     <Link href={`/blog/post/${post?.slug}`} className={styles.blogItem}>
       <div className={styles.blogItemInner}>
@@ -23,7 +29,7 @@ const BlogItem: React.FC<BlogItemProps> = ({ post = null }) => {
           )}
         </div>
         <div className={styles.right}>
-          <span>Published on {post.createdAt}</span>
+          <span>Published on {publishedOn}</span>
           <h5>{post.title}</h5>
           <span>Written by {post.author?.name}</span>
           <p>{post.meta.description}</p>
