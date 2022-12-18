@@ -19,6 +19,11 @@ const PageHeader: React.FC<PageHeaderProps> = () => {
   const [showMenu1, setShowMenu1] = React.useState(false);
   const [showMobile, setShowMobile] = React.useState(false);
 
+  const closeMenus = () => {
+    setShowMenu1(false);
+    setShowMobile(false);
+  };
+
   return (
     <header
       className={`${styles.header} ${
@@ -79,7 +84,11 @@ const PageHeader: React.FC<PageHeaderProps> = () => {
               </li> */}
 
               <li>
-                <Link href="/blog" className={notoSans.className}>
+                <Link
+                  href="/blog"
+                  className={notoSans.className}
+                  onClick={closeMenus}
+                >
                   Blog
                 </Link>
               </li>
