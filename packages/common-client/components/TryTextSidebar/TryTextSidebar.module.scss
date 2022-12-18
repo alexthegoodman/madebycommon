@@ -2,6 +2,9 @@
 @import "../../app/shared.scss";
 
 .tryTextSidebar {
+  position: sticky;
+  top: 50px;
+
   .tryTextSidebarInner {
     img {
       display: block;
