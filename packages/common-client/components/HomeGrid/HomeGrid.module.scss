@@ -22,6 +22,8 @@ $innerPadding: 30px;
         padding: $innerPadding;
         text-decoration: none;
 
+        overflow: hidden;
+
         background-color: rgba(0, 0, 0, 0.2);
         transition: all 0.2s;
 
@@ -145,6 +147,11 @@ $innerPadding: 30px;
   }
 
   @include desktopDown {
+    .homeGridInner {
+      width: 100%;
+    }
+  }
+  @include midDown {
     margin-bottom: 60px;
 
     .homeGridInner {
@@ -172,7 +179,8 @@ $innerPadding: 30px;
       .left {
         .gridItem {
           .itemContent {
-            padding: 0 75px 0 25px;
+            padding: 0 75px 0 20px;
+            bottom: 20px;
 
             span {
               font-size: 28px;
@@ -182,20 +190,44 @@ $innerPadding: 30px;
               line-height: 26px;
             }
           }
+          .icon {
+            bottom: 20px;
+            right: 20px;
+          }
         }
       }
       .right {
-        flex-direction: column;
+        flex-direction: row;
 
         .gridItem {
-          aspect-ratio: 3/2;
+          aspect-ratio: 4/3;
+          margin-right: $gutter;
+
+          .itemContent {
+            padding: 20px;
+          }
 
           &:nth-of-type(2) {
             margin-top: 0;
+            margin-right: 0;
           }
 
           span {
             font-size: 24px;
+          }
+
+          .icon {
+            bottom: 20px;
+            right: 20px;
+          }
+        }
+      }
+    }
+    @include smallDown {
+      .homeGridInner {
+        .right {
+          .gridItem {
+            aspect-ratio: 2/3;
           }
         }
       }
