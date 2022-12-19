@@ -28,6 +28,10 @@
   color: $black;
 
   @include desktopDown {
+    font-size: 54px;
+    line-height: 68px;
+  }
+  @include smallDown {
     font-size: 38px;
     line-height: 54px;
   }

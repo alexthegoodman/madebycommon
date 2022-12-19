@@ -23,14 +23,33 @@
   @include desktopDown {
     .homeHeroInner {
       width: 100%;
-      flex-direction: column;
       padding: 25px $gutter 50px $gutter;
-
+    }
+  }
+  @include midDown {
+    .homeHeroInner {
+      .left,
       .right {
+        width: 50%;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+  @include smallDown {
+    .homeHeroInner {
+      flex-direction: column;
+
+      .left,
+      .right {
+        width: 100%;
+
         img {
           display: block;
           max-width: 100%;
-          height: auto;
           margin-top: 50px;
         }
       }
