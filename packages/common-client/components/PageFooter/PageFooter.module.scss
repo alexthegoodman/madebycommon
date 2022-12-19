@@ -50,6 +50,12 @@
   @include desktopDown {
     .footerInner {
       width: 100%;
+      padding: 50px $gutter;
+    }
+  }
+  @include smallDown {
+    .footerInner {
+      width: 100%;
       flex-direction: column;
       justify-content: center;
 
