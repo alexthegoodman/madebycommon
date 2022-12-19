@@ -154,6 +154,12 @@
   }
 
   @include desktopDown {
+    .innerHeader {
+      width: 100%;
+      padding: 40px $gutter 0 $gutter;
+    }
+  }
+  @include midDown {
     .mobileButtonContainer {
       display: block;
     }
