@@ -28,7 +28,7 @@
 
   @include desktopDown {
     .homeCTAInner {
-      width: 100%;
+      width: $mid;
       padding: 60px $gutter 70px $gutter;
 
       h3 {
@@ -36,6 +36,21 @@
       p {
         font-size: 22px;
         line-height: 32px;
+      }
+    }
+  }
+  @include midDown {
+    .homeCTAInner {
+      width: $small;
+    }
+  }
+  @include smallDown {
+    .homeCTAInner {
+      width: 100%;
+
+      p {
+        font-size: 18px;
+        line-height: 28px;
       }
     }
   }
