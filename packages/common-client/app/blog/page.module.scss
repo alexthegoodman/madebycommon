@@ -9,8 +9,13 @@
 
   @include midDown {
     .blogListInner {
-      width: 100%;
+      width: $small;
       padding: 0 $gutter;
+    }
+  }
+  @include smallDown {
+    .blogListInner {
+      width: 100%;
     }
   }
 }
