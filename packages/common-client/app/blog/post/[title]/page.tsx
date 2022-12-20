@@ -10,7 +10,7 @@ export const getPost = (slug) => {
   //   const data = fetch(
   //     `http://0.0.0.0:3000/api/posts?where[slug][equals]=${slug}`
   //   );
-  const data = request("http://localhost:3000/api/graphql", getPostQuery, {
+  const data = request("http://0.0.0.0:3000/api/graphql", getPostQuery, {
     slug,
   });
   return data;

@@ -7,7 +7,7 @@ import { getPostsQuery } from "../../../graphql/queries/posts";
 import styles from "../page.module.scss";
 
 const getPosts = (pageNum) => {
-  const data = request("http://localhost:3000/api/graphql", getPostsQuery, {
+  const data = request("http://0.0.0.0:3000/api/graphql", getPostsQuery, {
     page: parseInt(pageNum),
   });
   return data;

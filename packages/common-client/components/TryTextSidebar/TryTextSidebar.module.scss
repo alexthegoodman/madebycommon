@@ -16,19 +16,48 @@
     p {
       display: block;
       text-align: center;
-      font-weight: 400;
     }
     h5 {
       font-size: 32px;
       margin-bottom: 15px;
+      font-weight: 700;
     }
     p {
       font-size: 18px;
       line-height: 24px;
       margin-bottom: 20px;
+      font-weight: 400;
     }
     .btn {
       font-size: 24px;
+    }
+  }
+
+  @include midDown {
+    position: relative;
+    top: auto;
+    width: 100%;
+    background-color: $lighterGrey;
+    padding: 25px;
+
+    .tryTextSidebarInner {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+
+      img {
+        display: none;
+      }
+      h5 {
+        margin: 0;
+        text-align: left;
+      }
+      p {
+        text-align: left;
+        width: 35%;
+        margin: 0;
+      }
     }
   }
 }
