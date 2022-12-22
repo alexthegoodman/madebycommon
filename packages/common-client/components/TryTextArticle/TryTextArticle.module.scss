@@ -27,4 +27,20 @@ section.tryTextArticle {
       width: 30%;
     }
   }
+
+  @include smallDown {
+    div.tryTextArticleInner {
+      flex-direction: column;
+
+      p.copy {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+      }
+      .btn {
+        width: 200px;
+      }
+    }
+  }
 }

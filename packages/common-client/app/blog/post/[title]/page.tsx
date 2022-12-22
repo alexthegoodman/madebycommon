@@ -1,10 +1,12 @@
 import request from "graphql-request";
 import Image from "next/image";
+import { useMemo } from "react";
 import TryTextArticle from "../../../../components/TryTextArticle/TryTextArticle";
 import TryTextSidebar from "../../../../components/TryTextSidebar/TryTextSidebar";
 import { getPostQuery } from "../../../../graphql/queries/posts";
 import { serialize } from "../../../../helpers/serialize";
 import styles from "./page.module.scss";
+import { DateTime } from "luxon";
 
 export const getPost = (slug) => {
   //   const data = fetch(
@@ -20,6 +22,9 @@ const BlogPost = async ({ params }) => {
   const postData = await getPost(params.title);
   //   const postJson = await postData.json();
   const post = postData.Posts.docs[0];
+
+  const publishedOn = DateTime.fromISO(post.createdAt).toFormat("LLL dd, yyyy");
+  const updatedOn = DateTime.fromISO(post.updatedAt).toFormat("LLL dd, yyyy");
 
   // console.info("post", post);
 
@@ -43,11 +48,11 @@ const BlogPost = async ({ params }) => {
           <div className={styles.right}>
             {post.createdAt === post.updatedAt ? (
               <span className={styles.datePublished}>
-                Published on {post.createdAt}
+                Published on {publishedOn}
               </span>
             ) : (
               <span className={styles.datePublished}>
-                Last Updated on {post.updatedAt}
+                Last Updated on {updatedOn}
               </span>
             )}
 
