@@ -10,7 +10,10 @@ import { cloudStorage } from "@payloadcms/plugin-cloud-storage";
 import s3Adapter from "./adapters/S3";
 
 export default buildConfig({
-  serverURL: "http://localhost:3000",
+  serverURL:
+    process.env.NODE_ENV === "production"
+      ? "https://madebycommon-server.herokuapp.com"
+      : "http://localhost:3000",
   admin: {
     user: Users.slug,
   },
