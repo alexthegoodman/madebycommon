@@ -2,7 +2,7 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "build": "npm --prefix ./packages/common-server run build",
+    "build:server": "npm --prefix ./packages/common-server run build",
     "start": "npm --prefix ./packages/common-server run serve",
     "postinstall": "npm --prefix ./packages/common-server install"
   },
