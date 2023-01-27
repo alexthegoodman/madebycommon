@@ -26,8 +26,8 @@ export default buildConfig({
     seo({
       collections: ["posts"],
       uploadsCollection: "media",
-      generateTitle: ({ doc }) => `${doc.title.value} - MadeByCommon.com`,
-      generateDescription: ({ doc }) => doc.excerpt,
+      generateTitle: ({ doc }: any) => `${doc.title.value} - MadeByCommon.com`,
+      generateDescription: ({ doc }: any) => doc.excerpt,
     }),
     cloudStorage({
       collections: {
