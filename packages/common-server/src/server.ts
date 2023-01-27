@@ -21,4 +21,7 @@ payload.init({
 
 // Add your own express routes here
 
-app.listen(3000, "0.0.0.0");
+const port = process.env.PORT ? (process.env.PORT as unknown as number) : 3000;
+const hostname = "localhost";
+
+app.listen(port, hostname);

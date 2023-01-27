@@ -10,7 +10,7 @@ import { cloudStorage } from "@payloadcms/plugin-cloud-storage";
 import s3Adapter from "./adapters/S3";
 
 export default buildConfig({
-  serverURL: "http://0.0.0.0:3000",
+  serverURL: "http://localhost:3000",
   admin: {
     user: Users.slug,
   },
@@ -29,12 +29,12 @@ export default buildConfig({
       generateTitle: ({ doc }) => `${doc.title.value} - MadeByCommon.com`,
       generateDescription: ({ doc }) => doc.excerpt,
     }),
-    // cloudStorage({
-    //   collections: {
-    //     media: {
-    //       adapter: s3Adapter, // see docs for the adapter you want to use
-    //     },
-    //   },
-    // }),
+    cloudStorage({
+      collections: {
+        media: {
+          adapter: s3Adapter, // see docs for the adapter you want to use
+        },
+      },
+    }),
   ],
 });
