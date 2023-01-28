@@ -99,7 +99,7 @@ const PageHeader: React.FC<PageHeaderProps> = () => {
             </ul>
           </nav>
         </div>
-        <div className={styles.right}>
+        {/* <div className={styles.right}>
           <ul className={styles.socialList}>
             <li>
               <a href="" target="_blank">
@@ -117,7 +117,7 @@ const PageHeader: React.FC<PageHeaderProps> = () => {
               </a>
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
       <div className={styles.mobileHeader}>
         <div className={styles.mobileHeaderInner}>
