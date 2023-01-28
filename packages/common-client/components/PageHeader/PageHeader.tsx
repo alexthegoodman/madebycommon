@@ -45,8 +45,12 @@ const PageHeader: React.FC<PageHeaderProps> = () => {
           <nav className={styles.nav}>
             <ul className={styles.navList}>
               <li>
-                <a href="" className={notoSans.className}>
-                  Try CommonText <ArrowSquareOut weight="thin" />
+                <a
+                  href="https://deeptype.app"
+                  target="_blank"
+                  className={notoSans.className}
+                >
+                  Try DeepType <ArrowSquareOut weight="thin" />
                 </a>
               </li>
 

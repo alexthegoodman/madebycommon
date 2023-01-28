@@ -13,19 +13,19 @@ const HomeGrid = ({ posts }: HomeGridProps) => {
       <div className={styles.homeGridInner}>
         <div className={styles.left}>
           <a
-            href="https://streamdoc.app"
+            href="https://deeptype.app"
             target="_blank"
             className={styles.gridItem}
           >
             <Image
               className={styles.backImage}
               src="/images/tempCommonText2.jpg"
-              alt="CommonText app"
+              alt="DeepType app"
               width={700}
               height={400}
             />
             <div className={styles.itemContent}>
-              <span>CommonText</span>
+              <span>DeepType</span>
               <p>Get Relevant Information As You Type</p>
             </div>
             <div className={styles.icon}>

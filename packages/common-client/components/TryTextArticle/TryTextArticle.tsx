@@ -8,10 +8,10 @@ const TryTextArticle: React.FC<TryTextArticleProps> = () => {
   return (
     <section className={styles.tryTextArticle}>
       <div className={styles.tryTextArticleInner}>
-        <h5 className={styles.headline}>Try CommonText</h5>
+        <h5 className={styles.headline}>Try DeepType</h5>
         <p className={styles.copy}>Surface Relevant Information As You Type</p>
-        <a className={styles.btn} target="_blank" href="https://commontext.app">
-          Try Free
+        <a className={styles.btn} target="_blank" href="https://deeptype.app">
+          Try Today
         </a>
       </div>
     </section>

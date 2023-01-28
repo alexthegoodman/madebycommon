@@ -16,8 +16,8 @@ const PageFooter: React.FC<PageFooterProps> = () => {
         <div className={styles.right}>
           <ul>
             <li>
-              <a href="https://commontext.app" target="_blank">
-                Try CommonText
+              <a href="https://deeptype.app" target="_blank">
+                Try DeepType
               </a>
             </li>
             <li>
