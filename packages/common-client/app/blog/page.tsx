@@ -3,11 +3,12 @@ import Image from "next/image";
 import BlogItem from "../../components/BlogItem/BlogItem";
 import HomeCTA from "../../components/HomeCTA/HomeCTA";
 import Paginator from "../../components/Paginator/Paginator";
+import { graphqlUrl } from "../../defs/urls";
 import { getPostsQuery } from "../../graphql/queries/posts";
 import styles from "./page.module.scss";
 
 const getPosts = () => {
-  const data = request("http://0.0.0.0:3000/api/graphql", getPostsQuery);
+  const data = request(graphqlUrl, getPostsQuery);
   return data;
 };
 

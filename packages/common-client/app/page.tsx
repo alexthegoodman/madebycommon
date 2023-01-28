@@ -3,14 +3,12 @@ import Image from "next/image";
 import HomeCTA from "../components/HomeCTA/HomeCTA";
 import HomeGrid from "../components/HomeGrid/HomeGrid";
 import HomeHero from "../components/HomeHero/HomeHero";
+import { graphqlUrl } from "../defs/urls";
 import { getPostsPreviewQuery } from "../graphql/queries/posts";
 import styles from "./page.module.scss";
 
 const getPosts = () => {
-  const data = request(
-    "http://localhost:3000/api/graphql",
-    getPostsPreviewQuery
-  );
+  const data = request(graphqlUrl, getPostsPreviewQuery);
 
   return data;
 };
