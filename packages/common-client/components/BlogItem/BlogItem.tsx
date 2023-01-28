@@ -18,7 +18,7 @@ const BlogItem: React.FC<BlogItemProps> = ({ post = null }) => {
       <div className={styles.blogItemInner}>
         <div className={styles.left}>
           {post.meta?.image?.sizes?.wideThumbnail?.url ? (
-            <Image
+            <img
               src={post.meta?.image?.sizes?.wideThumbnail?.url}
               alt={post.title}
               width="550"

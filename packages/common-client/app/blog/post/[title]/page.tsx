@@ -35,7 +35,7 @@ const BlogPost = async ({ params }) => {
         <div className={styles.articleHeaderInner}>
           {post.meta?.image?.sizes?.largeThumbnail?.url ? (
             <div className={styles.left}>
-              <Image
+              <img
                 src={post.meta?.image?.sizes?.largeThumbnail?.url}
                 alt={post.title}
                 width={post.meta?.image?.sizes?.largeThumbnail?.width / 2}
