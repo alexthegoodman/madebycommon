@@ -48,6 +48,16 @@ const PostFieldsFragment = gql`
   }
 `;
 
+export const getPostSlugsQuery = gql`
+  query postsQuery {
+    Posts {
+      docs {
+        slug
+      }
+    }
+  }
+`;
+
 export const getPostsQuery = gql`
   query postsQuery($page: Int) {
     Posts(page: $page, limit: 3) {
