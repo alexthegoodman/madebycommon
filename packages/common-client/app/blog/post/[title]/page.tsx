@@ -9,6 +9,8 @@ import styles from "./page.module.scss";
 import { DateTime } from "luxon";
 import { graphqlUrl } from "../../../../defs/urls";
 
+export const revalidate = 60;
+
 export const getPost = (slug) => {
   //   const data = fetch(
   //     `http://0.0.0.0:3000/api/posts?where[slug][equals]=${slug}`

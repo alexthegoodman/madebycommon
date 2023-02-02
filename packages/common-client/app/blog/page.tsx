@@ -7,6 +7,8 @@ import { graphqlUrl } from "../../defs/urls";
 import { getPostsQuery } from "../../graphql/queries/posts";
 import styles from "./page.module.scss";
 
+export const revalidate = 60;
+
 const getPosts = () => {
   const data = request(graphqlUrl, getPostsQuery);
   return data;
