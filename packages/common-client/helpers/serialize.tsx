@@ -31,6 +31,8 @@ export const serialize = (children: any) =>
       return null;
     }
 
+    // console.info("node", node?.value?.sizes?.largeThumbnail?.url);
+
     switch (node.type) {
       case "h1":
         return <h1 key={i}>{serialize(node.children)}</h1>;
@@ -58,6 +60,8 @@ export const serialize = (children: any) =>
             {serialize(node.children)}
           </a>
         );
+      case "upload":
+        return <img src={node?.value?.sizes?.largeThumbnail?.url} />;
 
       default:
         return <p key={i}>{serialize(node.children)}</p>;
