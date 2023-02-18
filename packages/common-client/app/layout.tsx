@@ -24,15 +24,19 @@ export default function RootLayout({
         src="https://www.googletagmanager.com/gtag/js?id=G-KFMMQJBWE5"
         strategy="afterInteractive"
       />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', 'G-KFMMQJBWE5');
-        `}
-      </Script>
+        `,
+        }}
+      />
 
       <body>
         <PageHeader />
