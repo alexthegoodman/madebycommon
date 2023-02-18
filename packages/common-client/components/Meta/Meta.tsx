@@ -10,16 +10,6 @@ const Meta: React.FC<MetaProps> = ({
   description = "",
   addt = <></>,
 }) => {
-  //   const gaScript = `
-  //       window.dataLayer = window.dataLayer || [];
-  //       function gtag(){window.dataLayer.push(arguments);}
-  //       gtag('js', new Date());
-
-  //       console.info("ga loaded", gtag)
-
-  //       gtag('config', 'G-KFMMQJBWE5');
-  //     `;
-
   return (
     <>
       <title>{title}</title>
@@ -27,25 +17,6 @@ const Meta: React.FC<MetaProps> = ({
       <meta name="description" content={description} />
       <link rel="icon" href="/favicon.ico" />
       {addt}
-
-      <script
-        // async={true}
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-KFMMQJBWE5"
-      ></script>
-      {/* <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-KFMMQJBWE5"
-        strategy="afterInteractive"
-      /> */}
-      {/* <Script id="google-analytics" strategy="afterInteractive">
-        {gaScript}
-      </Script> */}
-      {/* <script
-        id="ga-script"
-        src=""
-        async
-        dangerouslySetInnerHTML={{ __html: gaScript }}
-      ></script> */}
     </>
   );
 };
