@@ -10,6 +10,16 @@ const Meta: React.FC<MetaProps> = ({
   description = "",
   addt = <></>,
 }) => {
+  const gaScript = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      console.info("ga loaded", gtag)
+
+      gtag('config', 'G-KFMMQJBWE5');
+    `;
+
   return (
     <>
       <title>{title}</title>
@@ -19,7 +29,8 @@ const Meta: React.FC<MetaProps> = ({
       {addt}
 
       <script
-        async={true}
+        // async={true}
+        async
         src="https://www.googletagmanager.com/gtag/js?id=G-KFMMQJBWE5"
       ></script>
       {/* <Script
@@ -27,14 +38,14 @@ const Meta: React.FC<MetaProps> = ({
         strategy="afterInteractive"
       /> */}
       <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-KFMMQJBWE5');
-        `}
+        {gaScript}
       </Script>
+      {/* <script
+        id="ga-script"
+        src=""
+        async
+        dangerouslySetInnerHTML={{ __html: gaScript }}
+      ></script> */}
     </>
   );
 };
