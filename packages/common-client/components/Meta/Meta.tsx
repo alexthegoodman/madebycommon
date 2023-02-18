@@ -10,15 +10,15 @@ const Meta: React.FC<MetaProps> = ({
   description = "",
   addt = <></>,
 }) => {
-  const gaScript = `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){window.dataLayer.push(arguments);}
-      gtag('js', new Date());
+  //   const gaScript = `
+  //       window.dataLayer = window.dataLayer || [];
+  //       function gtag(){window.dataLayer.push(arguments);}
+  //       gtag('js', new Date());
 
-      console.info("ga loaded", gtag)
+  //       console.info("ga loaded", gtag)
 
-      gtag('config', 'G-KFMMQJBWE5');
-    `;
+  //       gtag('config', 'G-KFMMQJBWE5');
+  //     `;
 
   return (
     <>
@@ -37,9 +37,9 @@ const Meta: React.FC<MetaProps> = ({
         src="https://www.googletagmanager.com/gtag/js?id=G-KFMMQJBWE5"
         strategy="afterInteractive"
       /> */}
-      <Script id="google-analytics" strategy="afterInteractive">
+      {/* <Script id="google-analytics" strategy="afterInteractive">
         {gaScript}
-      </Script>
+      </Script> */}
       {/* <script
         id="ga-script"
         src=""

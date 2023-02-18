@@ -12,6 +12,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const gaScript = `
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  console.info("ga loaded", gtag)
+
+  gtag('config', 'G-KFMMQJBWE5');
+  </script>
+`;
   return (
     <html lang="en" className={lato.className}>
       {/*
@@ -21,6 +32,7 @@ export default function RootLayout({
       <head />
 
       <body>
+        <div dangerouslySetInnerHTML={{ __html: gaScript }}></div>
         <PageHeader />
         {children}
         <PageFooter />
