@@ -4,6 +4,7 @@ import { Lato } from "@next/font/google";
 import PageHeader from "../components/PageHeader/PageHeader";
 import PageFooter from "../components/PageFooter/PageFooter";
 import Script from "next/script";
+import { AnalyticsWrapper } from "../components/AnalyticsWrapper/AnalyticsWrapper";
 
 const lato = Lato({ subsets: ["latin"], weight: ["100", "300", "400", "700"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
         <PageHeader />
         {children}
         <PageFooter />
+        <AnalyticsWrapper />
       </body>
     </html>
   );
