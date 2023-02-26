@@ -1,0 +1,67 @@
+@import "../../app/variables.scss";
+@import "../../app/mixins.scss";
+
+.aboutAuthor {
+  padding: 25px;
+  background: $lighterGrey;
+  margin-top: 25px;
+
+  .aboutAuthorInner {
+    display: flex;
+    flex-direction: row;
+
+    .left {
+      img {
+        display: block;
+        max-width: none;
+      }
+    }
+    .right {
+      padding-left: 25px;
+
+      span {
+        display: block;
+      }
+      .name {
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .titles {
+        font-size: 16px;
+      }
+      p {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      .socialLinks {
+        display: flex;
+        flex-direction: row;
+
+        a {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-right: 15px;
+          font-size: 24px;
+          color: $black;
+          text-decoration: none;
+
+          span {
+            font-size: 16px;
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  @include smallDown {
+    .aboutAuthorInner {
+      flex-direction: column;
+
+      .right {
+        padding: 0;
+      }
+    }
+  }
+}

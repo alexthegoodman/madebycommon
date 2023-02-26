@@ -8,6 +8,7 @@ import { serialize } from "../../../../helpers/serialize";
 import styles from "./page.module.scss";
 import { DateTime } from "luxon";
 import { graphqlUrl } from "../../../../defs/urls";
+import AboutAuthor from "../../../../components/AboutAuthor/AboutAuthor";
 
 export const revalidate = 60;
 
@@ -75,6 +76,7 @@ const BlogPost = async ({ params }) => {
           <article className={styles.articleBody}>
             {serialize(post.content)}
             <TryTextArticle />
+            <AboutAuthor />
           </article>
         </div>
       </section>
